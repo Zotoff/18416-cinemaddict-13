@@ -1,7 +1,7 @@
 # Проект «Киноман» [![Build status][travis-image]][travis-url]
 
 * Студент: [Павел Зотов](https://up.htmlacademy.ru/ecmascript/13/user/18416).
-* Наставник: `Неизвестно`.
+* Наставник: `Евгений Фаллер`.
 
 ---
 
