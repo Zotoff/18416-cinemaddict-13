@@ -1,5 +1,3 @@
-"use strict";
-
 import {createFilmCard} from '../src/view/filmCard.js';
 import {createFilmPopup} from '../src/view/filmPopup.js';
 import {createMainMenu} from '../src/view/mainMenu.js';
@@ -13,13 +11,12 @@ import {createFooterMoviesCount} from '../src/view/footerMoviesCount.js';
 
 
 const mainBlock = document.querySelector(`.main`);
-const filmsBlock = document.querySelector(`.films`);
 const headerBlock = document.querySelector(`.header`);
 const footerBlock = document.querySelector(`.footer`);
 
 const insertToDOM = (container, markup, place) => {
-	container.insertAdjacentHTML(place, markup);
-}
+  container.insertAdjacentHTML(place, markup);
+};
 
 insertToDOM(mainBlock, createMainMenu(), `afterbegin`);
 insertToDOM(headerBlock, createHeaderProfile(), `beforeend`);

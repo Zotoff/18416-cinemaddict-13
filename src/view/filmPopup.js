@@ -167,5 +167,5 @@ export const createFilmPopup = () => {
       </section>
     </div>
   </form>
-</section>`
-}
+</section>`;
+};
