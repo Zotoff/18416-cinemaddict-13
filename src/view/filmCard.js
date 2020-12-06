@@ -1,5 +1,7 @@
-export const createFilmCard = (film) => {
-  const {name, rating, year, duration, genres, poster, description, commentsCount} = film;
+import {createElement} from '../utils/utils';
+
+const createFilmCard = (film) => {
+  const {id, name, rating, year, duration, genres, poster, description, commentsCount} = film;
 
   const generateGenre = () => {
     return genres.map((genre) => `
@@ -7,8 +9,7 @@ export const createFilmCard = (film) => {
     `).join(``);
   };
 
-
-  return `<article class="film-card">
+  return `<article class="film-card" data-id="${id}">
           <h3 class="film-card__title">${name}</h3>
           <p class="film-card__rating">${rating}</p>
           <p class="film-card__info">
@@ -26,3 +27,26 @@ export const createFilmCard = (film) => {
           </div>
         </article>`;
 };
+
+export default class FilmCard {
+  constructor(film) {
+    this._film = film;
+    this._element = null;
+  }
+
+  getTemplate() {
+    return createFilmCard(this._film);
+  }
+
+  getElement() {
+    if (!this._element) {
+      this._element = createElement(this.getTemplate());
+    }
+
+    return this._element;
+  }
+
+  removeElement() {
+    this._element = null;
+  }
+}
