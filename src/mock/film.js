@@ -5,17 +5,13 @@ import {generateFilmWriter} from './writers.js';
 import {generateFilmActor} from './actors.js';
 import {countryList} from './countries.js';
 import {generateFilmGenre} from './genres.js';
+import {constants} from '../constants/constants';
 
-const MAX_COMMENTS = 5;
-const MAX_ACTORS = 10;
-const MAX_WRITERS = 4;
-const MAX_GENRES = 4;
-
-const comments = new Array(getRandomInteger(1, MAX_COMMENTS)).fill().map(generateComment);
+const comments = new Array(getRandomInteger(1, constants.MAX_COMMENTS)).fill().map(generateComment);
 const director = generateFilmDirector();
-const writers = new Array(MAX_WRITERS).fill().map(generateFilmWriter);
-const actors = new Array(MAX_ACTORS).fill().map(generateFilmActor);
-const genres = new Array(MAX_GENRES).fill().map(generateFilmGenre);
+const writers = new Array(constants.MAX_WRITERS).fill().map(generateFilmWriter);
+const actors = new Array(constants.MAX_ACTORS).fill().map(generateFilmActor);
+const genres = new Array(constants.MAX_GENRES).fill().map(generateFilmGenre);
 
 const generateFilmName = () => {
   const names = [
@@ -113,8 +109,11 @@ const generateFilmAgeRating = () => {
   return ageRating;
 };
 
+let counter = +constants.INITIAL_ID;
+
 export const generateFilm = () => {
   return {
+    id: counter++,
     name: generateFilmName(),
     originalName: generateFilmName(),
     description: generateDescription(),

@@ -24,3 +24,34 @@ export const checkKeyDownEvent = (evt, key, cb) => {
     cb();
   }
 };
+
+export const RenderPosition = {
+  AFTERBEGIN: `afterbegin`,
+  BEFOREEND: `beforeend`,
+  AFTEREND: `afterend`
+};
+
+export const createElement = (template) => {
+  const newElement = document.createElement(`div`);
+  newElement.innerHTML = template;
+  return newElement.childNodes[0];
+};
+
+export const renderTemplate = (container, element, position) => {
+  container.insertAdjacentHTML(position, element);
+};
+
+export const renderElement = (container, element, position) => {
+  switch (position) {
+    case RenderPosition.AFTERBEGIN:
+      container.prepend(element);
+      break;
+    case RenderPosition.BEFOREEND:
+      container.append(element);
+      break;
+    case RenderPosition.AFTEREND:
+      container.insertAdjacentElement(`afterend`, element);
+      break;
+  }
+};
+
