@@ -1,23 +1,20 @@
-import {createElement} from '../utils/utils';
+import {createElement} from '../utils/utils.js';
+import {createHeaderProfile} from '../view/headerProfileView';
 
-const createHeading = () => {
-  return `<h2></h2>`;
-};
 
-export default class Heading {
+export default class HeaderProfile {
   constructor() {
     this._element = null;
   }
 
   getTemplate() {
-    return createHeading();
+    return createHeaderProfile();
   }
 
   getElement() {
     if (!this._element) {
       this._element = createElement(this.getTemplate());
     }
-
     return this._element;
   }
 

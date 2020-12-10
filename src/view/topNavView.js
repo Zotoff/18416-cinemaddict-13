@@ -1,6 +1,6 @@
-import {createElement} from '../utils/utils';
 
-const createTopNav = (films) => {
+
+export const createTopNav = (films) => {
   const countItemsToFilter = (property) => {
     const filteredFilms = films.filter((item) => {
       if (item[property] === true) {
@@ -19,26 +19,3 @@ const createTopNav = (films) => {
       <a href="#favorites" class="main-navigation__item">Favorites <span class="main-navigation__item-count">${countItemsToFilter(`favorites`)}</span></a>
     </div>`;
 };
-
-export default class TopNav {
-  constructor(films) {
-    this._element = null;
-    this._films = films;
-  }
-
-  getTemplate() {
-    return createTopNav(this._films);
-  }
-
-  getElement() {
-    if (!this._element) {
-      this._element = createElement(this.getTemplate());
-    }
-
-    return this._element;
-  }
-
-  removeElement() {
-    this._element = null;
-  }
-}

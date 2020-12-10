@@ -1,16 +1,14 @@
-import {createElement} from '../utils/utils.js';
+import {createElement} from '../utils/utils';
+import {createShowMoreButton} from '../view/showMoreButtonView';
 
-const createUserRank = () => {
-  return `<p class="profile__rating">Movie Buff</p>`;
-};
 
-export default class UserRank {
+export default class ShowMoreButton {
   constructor() {
     this._element = null;
   }
 
   getTemplate() {
-    return createUserRank();
+    return createShowMoreButton();
   }
 
   getElement() {
@@ -24,5 +22,4 @@ export default class UserRank {
   removeElement() {
     this._element = null;
   }
-
 }

@@ -49,7 +49,7 @@ export const renderElement = (container, element, position) => {
     case RenderPosition.BEFOREEND:
       container.append(element);
       break;
-    case RenderPosition.AFTEREND:
+    default:
       container.insertAdjacentElement(`afterend`, element);
       break;
   }

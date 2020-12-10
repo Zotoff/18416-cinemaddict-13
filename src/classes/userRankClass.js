@@ -1,17 +1,13 @@
-
 import {createElement} from '../utils/utils';
+import {createUserRank} from '../view/userRankView';
 
-const createShowMoreButton = () => {
-  return `<button class="films-list__show-more">Show more</button>`;
-};
-
-export default class ShowMoreButton {
+export default class UserRank {
   constructor() {
     this._element = null;
   }
 
   getTemplate() {
-    return createShowMoreButton();
+    return createUserRank();
   }
 
   getElement() {
@@ -25,4 +21,5 @@ export default class ShowMoreButton {
   removeElement() {
     this._element = null;
   }
+
 }

@@ -1,17 +1,13 @@
 import {createElement} from '../utils/utils';
+import {createExtraFilmsList} from '../view/filmsListExtraView';
 
-const createFooterMoviesCount = (films) => {
-  return `<p>${films.length}</p>`;
-};
-
-export default class FooterMoviesCount {
-  constructor(films) {
+export default class ExtraFilmList {
+  constructor() {
     this._element = null;
-    this._films = films;
   }
 
   getTemplate() {
-    return createFooterMoviesCount(this._films);
+    return createExtraFilmsList();
   }
 
   getElement() {

@@ -1,15 +1,5 @@
 import {createElement} from '../utils/utils';
-
-const createFilmList = () => {
-  return `<section class="films">
-    <section class="films-list">
-      <h2 class="films-list__title visually-hidden">All movies. Upcoming</h2>
-
-      <div class="films-list__container">
-      </div>
-    </section>
-    </section>`;
-};
+import {createFilmListView} from '../view/filmListView';
 
 export default class FilmList {
   constructor() {
@@ -17,7 +7,7 @@ export default class FilmList {
   }
 
   getTemplate() {
-    return createFilmList();
+    return createFilmListView();
   }
 
   getElement() {
