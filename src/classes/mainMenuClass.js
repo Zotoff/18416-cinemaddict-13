@@ -1,25 +1,9 @@
-import {createElement} from '../utils/utils.js';
+import AbstractClass from '../classes/Abstract';
 import {createMainMenu} from '../view/mainMenuView.js';
 
 
-export default class MainMenu {
-  constructor() {
-    this._element = null;
-  }
-
+export default class MainMenu extends AbstractClass {
   getTemplate() {
     return createMainMenu();
-  }
-
-  getElement() {
-    if (!this._element) {
-      this._element = createElement(this.getTemplate());
-    }
-
-    return this._element;
-  }
-
-  removeElement() {
-    this._element = null;
   }
 }

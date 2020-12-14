@@ -1,15 +1,15 @@
-import AbstractClass from '../classes/Abstract';
-import {createShowMoreButton} from '../view/showMoreButtonView';
+import AbstractClass from '../Abstract';
+import {createFilmTitleView} from '../../view/Film/filmTitleView.js';
 
 
-export default class ShowMoreButton extends AbstractClass {
-  constructor() {
+export default class FilmTitleClass extends AbstractClass {
+  constructor(title) {
     super();
-
+    this._title = title;
     this._clickHandler = this._clickHandler.bind(this);
   }
   getTemplate() {
-    return createShowMoreButton();
+    return createFilmTitleView(this._title);
   }
 
   _clickHandler(evt) {

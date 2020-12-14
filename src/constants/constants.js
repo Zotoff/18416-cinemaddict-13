@@ -20,3 +20,9 @@ export const filmMockUp = {
   MAX_WRITERS: 4,
   MAX_GENRES: 4,
 };
+
+export const RenderPosition = {
+  AFTERBEGIN: `afterbegin`,
+  BEFOREEND: `beforeend`,
+  AFTEREND: `afterend`
+};

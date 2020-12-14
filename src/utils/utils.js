@@ -25,33 +25,60 @@ export const checkKeyDownEvent = (evt, key, cb) => {
   }
 };
 
-export const RenderPosition = {
-  AFTERBEGIN: `afterbegin`,
-  BEFOREEND: `beforeend`,
-  AFTEREND: `afterend`
-};
-
 export const createElement = (template) => {
   const newElement = document.createElement(`div`);
   newElement.innerHTML = template;
   return newElement.childNodes[0];
 };
 
-export const renderTemplate = (container, element, position) => {
-  container.insertAdjacentHTML(position, element);
+export const removeFilmCards = () => {
+  const filmCardsContainer = document.querySelector(`.films-list__container`);
+  const filmCardsList = filmCardsContainer.querySelectorAll(`.film-card`);
+  filmCardsList.forEach((card) => {
+    card.remove();
+  });
 };
 
-export const renderElement = (container, element, position) => {
-  switch (position) {
-    case RenderPosition.AFTERBEGIN:
-      container.prepend(element);
-      break;
-    case RenderPosition.BEFOREEND:
-      container.append(element);
-      break;
-    default:
-      container.insertAdjacentElement(`afterend`, element);
-      break;
+export const countItemsToFilter = (films, property) => {
+  const filteredFilms = films.filter((item) => {
+    if (item[property] === true) {
+      return item;
+    } else {
+      return undefined;
+    }
+  });
+  const filteredLength = filteredFilms.length;
+  return filteredLength;
+};
+
+export const checkGenres = (genres) => {
+  if (genres.length === 1) {
+    return `Genre`;
+  } else {
+    return `Genres`;
   }
 };
 
+export const generateGenre = (genres) => {
+  return genres.map((genre) => `
+      <span class="film-details__genre">${genre}</span>
+    `).join(``);
+};
+
+export const generateComments = (comments) => {
+  return comments.map((comment) => `
+    <li class="film-details__comment">
+        <span class="film-details__comment-emoji">
+          <img src="./images/emoji/${comment.emotion}.png" width="55" height="55" alt="emoji-smile">
+        </span>
+        <div>
+          <p class="film-details__comment-text">${comment.message}</p>
+          <p class="film-details__comment-info">
+            <span class="film-details__comment-author">${comment.author}</span>
+            <span class="film-details__comment-day">${comment.date}</span>
+            <button class="film-details__comment-delete">Delete</button>
+          </p>
+        </div>
+      </li>
+  `).join(``);
+};
