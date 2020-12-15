@@ -1,19 +1,16 @@
 import {createElement} from '../utils/utils';
 
-const createExtraFilmsList = () => {
-  return `<section class="films-list films-list--extra">
-    <div class="films-list__container">
-    </div>
-  </section>`;
-};
-
-export default class ExtraFilmList {
+export default class Abstract {
   constructor() {
-    this._element = null;
-  }
+    if (new.target === Abstract) {
+      throw new Error(`Can't instantiate Abstract class, only concrete one.`);
+    }
 
+    this._element = null;
+    this._callback = {};
+  }
   getTemplate() {
-    return createExtraFilmsList();
+    throw new Error(`Abstract method not implemented: ${this.walk.name}`);
   }
 
   getElement() {
