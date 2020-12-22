@@ -5,13 +5,13 @@ import {generateFilmWriter} from './writers.js';
 import {generateFilmActor} from './actors.js';
 import {countryList} from './countries.js';
 import {generateFilmGenre} from './genres.js';
-import {filmMockUp} from '../constants/constants';
+import {FilmMockUp} from '../constants/constants';
 
-const comments = new Array(getRandomInteger(1, filmMockUp.MAX_COMMENTS)).fill().map(generateComment);
+const comments = new Array(getRandomInteger(1, FilmMockUp.MAX_COMMENTS)).fill().map(generateComment);
 const director = generateFilmDirector();
-const writers = new Array(filmMockUp.MAX_WRITERS).fill().map(generateFilmWriter);
-const actors = new Array(filmMockUp.MAX_ACTORS).fill().map(generateFilmActor);
-const genres = new Array(filmMockUp.MAX_GENRES).fill().map(generateFilmGenre);
+const writers = new Array(FilmMockUp.MAX_WRITERS).fill().map(generateFilmWriter);
+const actors = new Array(FilmMockUp.MAX_ACTORS).fill().map(generateFilmActor);
+const genres = new Array(FilmMockUp.MAX_GENRES).fill().map(generateFilmGenre);
 
 const generateFilmName = () => {
   const names = [
