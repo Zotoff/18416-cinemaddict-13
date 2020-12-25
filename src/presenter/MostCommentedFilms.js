@@ -18,9 +18,9 @@ export default class MostCommentedFilmsPresenter {
     const extraFilmsAll = document.querySelectorAll(`.films-list--extra`);
     const mostCommentedContainer = extraFilmsAll[1].querySelector(`${this._filmsContainer}`);
     const filteredFilms = this._films.filter((item) => item.comments.length >= 2);
-    filteredFilms.forEach((item) => {
-      this._renderFilm(item, mostCommentedContainer);
-    });
+    for (let i = 0; i < 2; i++) {
+      this._renderFilm(filteredFilms[i], mostCommentedContainer);
+    }
   }
 
   _renderFilm(film, container) {

@@ -1,7 +1,7 @@
 import {renderElement} from "../utils/render.js";
 import {Film, RenderPosition} from '../constants/constants';
 
-import FilmListClass from '../components/film-list/filmList';
+import FilmListClass from '../components/film-list/film-list';
 import FilmPresenter from '../presenter/Film';
 import ShowMoreButtonPresenter from "./ShowMoreButton";
 

@@ -1,7 +1,7 @@
-import FooterMoviesCountClass from '../src/classes/footerMoviesCountClass.js';
-import HeaderProfileClass from '../src/classes/headerProfileClass.js';
-import UserRankClass from '../src/classes/userRankClass.js';
-import MainMenuClass from "./classes/mainMenuClass";
+import FooterMoviesCountClass from './components/footer-movies-count/footer-movies-count.js';
+import HeaderProfileClass from './components/header-profile/header-profile.js';
+import UserRankClass from './components/user-rank/user-rank-class.js';
+import MainMenuClass from "./components/main-menu/main-menu-class";
 
 import {generateFilm} from '../src/mock/film.js';
 import {renderElement} from './utils/render.js';

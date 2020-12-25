@@ -17,9 +17,9 @@ export default class TopRatedFilmsPresenter {
     renderElement(this._filmListContainer, this._extraFilmListComponent.getElement(), RenderPosition.BEFOREEND);
     const extraFilmsSelector = document.querySelector(`.films-list--extra ${this._filmsContainer}`);
     const filteredFilms = this._films.filter((item) => item.rating >= 5);
-    filteredFilms.forEach((item) => {
-      this._renderFilm(item, extraFilmsSelector);
-    });
+    for (let i = 0; i < 2; i++) {
+      this._renderFilm(filteredFilms[i], extraFilmsSelector);
+    }
   }
 
   _renderFilm(film, container) {

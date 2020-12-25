@@ -1,7 +1,7 @@
 import TopNavClass from "../components/top-nav/top-nav";
 import {RenderPosition} from '../constants/constants';
 import {renderElement} from "../utils/render.js";
-import {FilterItemClass} from "../components/filter-item/FilterItemClass";
+import {FilterItem} from "../components/filter-item/filter-item";
 import FilmListPresenter from "./FilmList";
 
 export default class TopNavPresenter {
@@ -12,10 +12,10 @@ export default class TopNavPresenter {
 
   init() {
     const topNavComponent = new TopNavClass(this._films);
-    const FilterItemAll = new FilterItemClass(this._films, `all`, `All`);
-    const FilterItemHistory = new FilterItemClass(this._films, `history`, `History`);
-    const FilterItemWatchList = new FilterItemClass(this._films, `watchlist`, `Watchlist`);
-    const FilterItemFavorites = new FilterItemClass(this._films, `favorites`, `Favorites`);
+    const FilterItemAll = new FilterItem(this._films, `all`, `All`);
+    const FilterItemHistory = new FilterItem(this._films, `history`, `History`);
+    const FilterItemWatchList = new FilterItem(this._films, `watchlist`, `Watchlist`);
+    const FilterItemFavorites = new FilterItem(this._films, `favorites`, `Favorites`);
     renderElement(this._topNavContainer, topNavComponent.getElement(), RenderPosition.AFTERBEGIN);
     renderElement(topNavComponent.getElement(), FilterItemHistory.getElement(), RenderPosition.AFTERBEGIN);
     renderElement(topNavComponent.getElement(), FilterItemWatchList.getElement(), RenderPosition.AFTERBEGIN);
