@@ -1,20 +1,17 @@
-export const constants = {
+export const FilterNames = {
+  history: `history`,
+  watchlist: `watchlist`,
+  favorites: `favorites`,
+  all: `all`
+};
+
+export const Film = {
   FILMS_COUNT: 20,
   FILMS_COUNT_PER_STEP: 5,
   RENDER_FILMS_COUNT: 5,
-  FilterTypes: {
-    history: `#history`,
-    watchlist: `#watchlist`,
-    favorites: `#favorites`
-  },
-  FilterNames: {
-    history: `history`,
-    watchlist: `watchlist`,
-    favorites: `favorites`
-  }
 };
 
-export const filmMockUp = {
+export const FilmMockUp = {
   MAX_COMMENTS: 5,
   MAX_ACTORS: 10,
   MAX_WRITERS: 4,

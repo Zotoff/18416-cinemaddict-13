@@ -20,9 +20,10 @@ export const generateDate = () => {
 };
 
 export const checkKeyDownEvent = (evt, key, cb) => {
-  if (evt.key === key) {
-    cb();
+  if (evt.key !== key) {
+    return null;
   }
+  return cb;
 };
 
 export const createElement = (template) => {
