@@ -83,3 +83,22 @@ export const generateComments = (comments) => {
       </li>
   `).join(``);
 };
+
+export const upperFirst = (string) => string ? string.charAt(0).toUpperCase() + string.slice(1) : ``;
+
+export const updateItem = (items, update) => {
+  const index = items.findIndex((item) => item.id === update.id);
+
+  if (index === -1) {
+    return items;
+  }
+
+  const res = [...items.slice(0, index), update, ...items.slice(index + 1)];
+
+  return res;
+};
+
+export const sortByRating = (items) =>
+  items.slice().sort((a, b) => b.rating - a.rating);
+export const sortByComments = (items) =>
+  items.slice().sort((a, b) => b.comments.length - a.comments.length);

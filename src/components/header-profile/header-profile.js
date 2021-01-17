@@ -1,5 +1,5 @@
-import AbstractClass from '../../classes/Abstract';
-import {createHeaderProfile} from './headerProfileView';
+import AbstractClass from '../abstract/abstract';
+import {createHeaderProfile} from './header-profile-view';
 export default class HeaderProfile extends AbstractClass {
   getTemplate() {
     return createHeaderProfile();

@@ -1,5 +1,5 @@
-import AbstractClass from '../../classes/Abstract';
-import {createFooterMoviesCount} from './footerMoviesCountView';
+import AbstractClass from '../abstract/abstract';
+import {createFooterMoviesCount} from './footer-movies-count-tpl';
 
 
 export default class FooterMoviesCount extends AbstractClass {

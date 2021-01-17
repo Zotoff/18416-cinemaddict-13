@@ -18,8 +18,20 @@ export const FilmMockUp = {
   MAX_GENRES: 4,
 };
 
+export const FilmListTitles = {
+  MOST_COMMENTED: `Most commented`,
+  TOP_RATED: `Top rated`,
+  ALL: `All movies. Upcoming`
+};
+
 export const RenderPosition = {
   AFTERBEGIN: `afterbegin`,
   BEFOREEND: `beforeend`,
   AFTEREND: `afterend`
 };
+
+export const Mode = {
+  POPUP_CLOSED: `CLOSED`,
+  POPUP_OPEN: `OPEN`
+};
+

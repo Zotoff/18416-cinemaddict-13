@@ -1,5 +1,5 @@
-import AbstractClass from '../../classes/Abstract';
-import {createMainMenu} from './mainMenuView.js';
+import AbstractClass from '../abstract/abstract';
+import {createMainMenu} from './main-menu-view';
 
 
 export default class MainMenu extends AbstractClass {
