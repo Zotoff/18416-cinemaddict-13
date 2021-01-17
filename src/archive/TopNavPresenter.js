@@ -40,7 +40,6 @@ export default class TopNavPresenter {
     });
   }
   _renderFilms(filter, films) {
-    const filmsListContainer = document.querySelector(`.films-list__container`);
     const clearFilms = () => {
       const filmsSelector = document.querySelector(`.films-list`);
       const Films = filmsSelector.querySelectorAll(`.film-card`);
@@ -63,7 +62,7 @@ export default class TopNavPresenter {
         const historyFilms = films.filter((item) => {
           return item.history;
         });
-        const FilmListHistory = new FilmListPresenter(filmsListContainer, historyFilms);
+        const FilmListHistory = new FilmListPresenter(historyFilms);
         FilmListHistory.init();
         break;
       case `watchlist`:
@@ -72,7 +71,7 @@ export default class TopNavPresenter {
         const watchListFilms = films.filter((item) => {
           return item.watchlist;
         });
-        const FilmListWatchList = new FilmListPresenter(filmsListContainer, watchListFilms);
+        const FilmListWatchList = new FilmListPresenter(watchListFilms);
         FilmListWatchList.init();
         break;
       case `favorites`:
@@ -81,13 +80,13 @@ export default class TopNavPresenter {
         const favoriteFilms = films.filter((item) => {
           return item.favorites;
         });
-        const FilmListFavorites = new FilmListPresenter(filmsListContainer, favoriteFilms);
+        const FilmListFavorites = new FilmListPresenter(favoriteFilms);
         FilmListFavorites.init();
         break;
       default:
         removeActiveClass();
         clearFilms();
-        const FilmList = new FilmListPresenter(filmsListContainer, films);
+        const FilmList = new FilmListPresenter(films);
         FilmList.init();
     }
 

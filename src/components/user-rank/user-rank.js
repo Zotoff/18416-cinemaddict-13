@@ -1,5 +1,5 @@
-import AbstractClass from '../../classes/Abstract';
-import {createUserRank} from './userRankView';
+import AbstractClass from '../abstract/abstract';
+import {createUserRank} from './user-rank-view';
 
 export default class UserRank extends AbstractClass {
   getTemplate() {

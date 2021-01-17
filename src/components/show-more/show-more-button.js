@@ -1,5 +1,5 @@
-import AbstractClass from '../../classes/Abstract';
-import {showMoreButtonView} from './ShowMoreButtonView';
+import AbstractClass from '../abstract/abstract';
+import {showMoreButtonView} from './show-more-button-view';
 
 
 export default class ShowMoreButton extends AbstractClass {

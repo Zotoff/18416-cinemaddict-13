@@ -136,7 +136,7 @@ export const generateFilm = () => {
     duration: generateFilmLength(),
     commentsCount: comments.length,
     watchlist: Boolean(getRandomInteger(0, 1)),
-    history: Boolean(getRandomInteger(0, 1)),
+    watched: Boolean(getRandomInteger(0, 1)),
     favorites: Boolean(getRandomInteger(0, 1)),
     rating: getRandomInteger(0, 10),
     director,
